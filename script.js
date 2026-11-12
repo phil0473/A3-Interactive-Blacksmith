@@ -119,3 +119,10 @@ function updateForge() {
     forgeImage.alt = "Roaring hot blacksmith forge";
   }
 }
+// reset game state to 20 heat, 0 swords, and empty feedback log
+function resetForge() {
+  heat = 20;
+  swordsMade = 0;
+  feedbackEl.textContent = "";
+  updateForge();
+}
