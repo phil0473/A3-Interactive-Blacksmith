@@ -126,3 +126,7 @@ function resetForge() {
   feedbackEl.textContent = "";
   updateForge();
 }
+
+// select interactive controls
+const heatForm = document.querySelector("#heat-form");
+const heatInput = document.querySelector("#heat-input");
