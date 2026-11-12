@@ -151,4 +151,4 @@ heatForm.addEventListener("submit", function (event) {
 
   heatForge(amount);
   heatInput.value = "";
-})
+});
