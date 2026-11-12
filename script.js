@@ -152,3 +152,6 @@ heatForm.addEventListener("submit", function (event) {
   heatForge(amount);
   heatInput.value = "";
 });
+
+const makeSwordBtn = document.querySelector("#make-sword-btn");
+const resetForgeBtn = document.querySelector("#reset-forge-btn");
