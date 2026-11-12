@@ -99,4 +99,23 @@ const feedbackEl = document.querySelector("#feedback-message");
 //10. update displayed numbers, status text, single active status class, and image
 function updateForge() {
   const status = getForgeStatus();
-  
+  heatDisplay.textContent = heat;
+  swordsDisplay.textContent = swordsMade;
+  statusText.textContent = status;
+  // Clear old status classes so only one is active at a time
+  statusText.classList.remove("too-cold", "ready-to-forge", "roaring-fire");
+
+  if (heat < 30) {
+    statusText.classList.add("too-cold");
+    forgeImage.src = "images/forge-cold.png"; // match your A1 filename
+    forgeImage.alt = "Cold blacksmith forge";
+  } else if (heat < 70) {
+    statusText.classList.add("ready-to-forge");
+    forgeImage.src = "images/forge-ready.png"; // match your A1 filename
+    forgeImage.alt = "Forge ready for crafting";
+  } else {
+    statusText.classList.add("roaring-fire");
+    forgeImage.src = "images/forge-roaring.png"; // match your A1 filename
+    forgeImage.alt = "Roaring hot blacksmith forge";
+  }
+}
