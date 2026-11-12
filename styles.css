@@ -23,19 +23,83 @@ p { margin: 0 0 1rem; }
 .message-box p { margin: 0; min-height: 3.2em; }
 aside { display: grid; gap: 1.5rem; }
 .panel { padding: 1.5rem; background: white; border: 1px solid #bdc9c2; border-radius: 1rem; }
-dl { margin: 0; }
-dt { margin-top: 1rem; }
-dd { margin-left: 0; margin-top: .25rem; }
-code { background: #e9f2ec; color: #004b31; padding: .2rem .4rem; border-radius: .25rem; font-size: .95rem; overflow-wrap: anywhere; }
-.note { font-size: .875rem; margin: 1.25rem 0 0; color: #455449; }
-.rules { list-style: none; padding: 0; margin: 0; }
+.note { font-size: .875rem; margin: .5rem 0 0; color: #455449; }
+.rules { list-style: none; padding: 0; margin: 0 0 1rem; }
 .rules li { display: flex; gap: 1rem; padding: .5rem 0; }
 .rules strong { min-width: 4rem; }
 footer { margin-top: 2rem; font-size: .9rem; color: #455449; }
-/* Match these class names in updateForge(). Remove the old class first. */
+
+/* forge status themes */
 .is-cold { --status-bg: #e4eaf1; --status-ink: #263b50; }
 .is-ready { --status-bg: #d8eee1; --status-ink: #004b31; }
 .is-roaring { --status-bg: #ffe3b5; --status-ink: #703400; }
-@media (max-width: 700px) { .layout { grid-template-columns: 1fr; } main { padding-top: 1.5rem; } .forge-top, .readings { padding: 1.5rem; } .message-box { margin-inline: 1.5rem; } }
 
 #forge-image { display: block; width: 100%; height: auto; max-height: 240px; object-fit: contain; margin: -1rem auto 1rem; }
+
+/* interactive forge controls */
+.forge-controls label {
+  display: block;
+  font-weight: bold;
+  font-size: .95rem;
+  margin-bottom: .5rem;
+}
+
+.heat-input-row {
+  display: flex;
+  gap: .75rem;
+}
+
+.heat-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: .65rem .85rem;
+  font: inherit;
+  border: 1px solid #bdc9c2;
+  border-radius: .5rem;
+}
+
+.btn-primary {
+  background: #006341;
+  color: white;
+  border: 1.5px solid #006341;
+  border-radius: .5rem;
+  padding: .7rem 1.35rem;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #004b31;
+  border-color: #004b31;
+}
+
+.btn-outline {
+  background: white;
+  color: #006341;
+  border: 1.5px solid #006341;
+  border-radius: .5rem;
+  padding: .7rem 1.35rem;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #e9f2ec;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.control-group {
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .layout { grid-template-columns: 1fr; }
+  main { padding-top: 1.5rem; }
+  .forge-top, .readings { padding: 1.5rem; }
+  .message-box { margin-inline: 1.5rem; }
+}
