@@ -85,10 +85,6 @@ function makeSword() {
   }
   updateForge();
 }
-
-// 8. call resetForge() once to start the game
-resetForge();
-
 //9. select DOM elements for forge status, stats, and feedback
 const heatDisplay = document.querySelector("#heat-value"); // match your A1 ID
 const swordsDisplay = document.querySelector("#swords-value"); // match your A1 ID
@@ -168,4 +164,7 @@ resetForgeBtn.addEventListener("click", function () {
 });
 
 // initialize starting state on page load
+resetForge();
+
+// 8. call resetForge() once to start the game
 resetForge();
