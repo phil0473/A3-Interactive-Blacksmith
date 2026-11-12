@@ -130,3 +130,25 @@ function resetForge() {
 // select interactive controls
 const heatForm = document.querySelector("#heat-form");
 const heatInput = document.querySelector("#heat-input");
+
+// plan: read heat input on submit -> validate positive whole number ->
+// show error if invalid, otherwisew call heatForge(amount) and clear input
+heatForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const rawValue = heatInput.value.trim();
+  const amount = Number(rawValue);
+
+  if (
+    rawValue === "" ||
+    !Number.isFinite(amount) ||
+    !Number.isInteger(amount) ||
+    amount <= 0
+  ) {
+    feedbackEl.textContent = "Enter a positive whole number to add heat.";
+    return;
+  }
+
+  heatForge(amount);
+  heatInput.value = "";
+})
