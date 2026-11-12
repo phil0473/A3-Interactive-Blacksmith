@@ -29,7 +29,7 @@ aside { display: grid; gap: 1.5rem; }
 .rules strong { min-width: 4rem; }
 footer { margin-top: 2rem; font-size: .9rem; color: #455449; }
 
-/* forge status themes */
+/* forge statu themes */
 .is-cold { --status-bg: #e4eaf1; --status-ink: #263b50; }
 .is-ready { --status-bg: #d8eee1; --status-ink: #004b31; }
 .is-roaring { --status-bg: #ffe3b5; --status-ink: #703400; }
