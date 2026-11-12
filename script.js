@@ -89,3 +89,14 @@ function makeSword() {
 // 8. call resetForge() once to start the game
 resetForge();
 
+//9. select DOM elements for forge status, stats, and feedback
+const heatDisplay = document.querySelector("#heat-value"); // match your A1 ID
+const swordsDisplay = document.querySelector("#swords-value"); // match your A1 ID
+const statusText = document.querySelector("#forge-status"); // match your A1 ID
+const forgeImage = document.querySelector("#forge-image"); // match your A1 ID
+const feedbackEl = document.querySelector("#feedback-message");
+
+//10. update displayed numbers, status text, single active status class, and image
+function updateForge() {
+  const status = getForgeStatus();
+  
