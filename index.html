@@ -3,16 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blacksmith — The Tiny Forge</title>
+  <title>Interactive Blacksmith — The Tiny Forge</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header><p>MTM6302 · Assignment 1</p><span>Blacksmith</span></header>
+  <header>
+    <p>MTM6302 · Assignment 3</p>
+    <span>Interactive Blacksmith</span>
+  </header>
+
   <main>
     <p class="eyebrow">Your workshop</p>
     <h1>The Tiny Forge</h1>
     <p class="intro">Build the heat. Craft a sword. Start again.</p>
+
     <div class="layout">
       <!-- JavaScript applies exactly one status class to this container. -->
       <section id="forge" class="forge is-cold" aria-labelledby="forge-heading">
@@ -24,25 +29,45 @@
           <p id="forge-status" class="status">Too cold</p>
         </div>
         <div class="readings">
-          <div><h3>Heat</h3><p><span id="heat-value">20</span><span class="unit"> / 100</span></p></div>
-          <div><h3>Swords made</h3><p id="sword-count">0</p></div>
+          <div>
+            <h3>Heat</h3>
+            <p><span id="heat-value">20</span><span class="unit"> / 100</span></p>
+          </div>
+          <div>
+            <h3>Swords made</h3>
+            <p id="sword-count">0</p>
+          </div>
         </div>
         <div class="message-box">
           <h3>Workshop log</h3>
-          <p id="action-message" role="status">Welcome to the forge. Add heat to begin.</p>
+          <p id="action-message" role="status"></p>
         </div>
       </section>
-      <aside aria-label="Game instructions">
-        <section class="panel">
-          <h2>Console commands</h2>
-          <p>Write each function in <code>script.js</code>, then try it in the browser console.</p>
-          <dl>
-            <dt><code>heatForge(20)</code></dt><dd>Add 20 heat, up to 100.</dd>
-            <dt><code>makeSword()</code></dt><dd>Use 30 heat to make one sword.</dd>
-            <dt><code>resetForge()</code></dt><dd>Return to 20 heat and zero swords.</dd>
-          </dl>
-          <p class="note">Commands work once you have built them. Refreshing resets the game.</p>
+
+      <aside aria-label="Forge controls and rules">
+        <section class="panel forge-controls">
+          <h2>Forge controls</h2>
+
+          <form id="heat-form" novalidate>
+            <label for="heat-input">Heat to add</label>
+            <div class="heat-input-row">
+              <input type="number" id="heat-input" min="1" step="1" placeholder="20">
+              <button type="submit" id="add-heat-btn" class="btn-primary">Add heat</button>
+            </div>
+            <p class="note">Enter a positive whole number. Maximum forge heat: 100.</p>
+          </form>
+
+          <div class="control-group">
+            <button type="button" id="make-sword-btn" class="btn-primary btn-full">Make sword</button>
+            <p class="note">Use 30 heat to make one sword.</p>
+          </div>
+
+          <div class="control-group">
+            <button type="button" id="reset-forge-btn" class="btn-outline btn-full">Reset forge</button>
+            <p class="note">Return to 20 heat and zero swords.</p>
+          </div>
         </section>
+
         <section class="panel">
           <h2>Know your forge</h2>
           <ul class="rules">
@@ -50,29 +75,12 @@
             <li><strong>30–69</strong><span>Ready to forge.</span></li>
             <li><strong>70–100</strong><span>Roaring fire. Keep crafting!</span></li>
           </ul>
-          <p class="note">Use whole-number heating amounts from 0 to 100.</p>
-          <!-- Workshop feedback area -->
-           <section class="workshop-log">
-  <h2>Workshop log</h2>
-  <p id="feedback-message" aria-live="polite"></p>
-</section>
-<!-- Forge interactive controls -->
-<section class="forge-controls">
-  <h2>Forge controls</h2>
-  <form id="heat-form" novalidate>
-    <label for="heat-input">Heat to add</label>
-    <input type="number" id="heat-input" min="1" step="1" placeholder="20" />
-    <button type="submit" id="add-heat-btn">Add heat</button>
-  </form>
-  <div class="control-buttons">
-    <button type="button" id="make-sword-btn">Make sword</button>
-    <button type="button" id="reset-forge-btn">Reset forge</button>
-  </div>
-</section>
+          <p class="note">Each sword requires at least 30 heat.</p>
         </section>
       </aside>
     </div>
-    <footer>Call an action → change the state → update the page.</footer>
+
+    <footer>Choose an action → change the state → update the page.</footer>
   </main>
 </body>
 </html>
