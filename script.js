@@ -155,3 +155,17 @@ heatForm.addEventListener("submit", function (event) {
 
 const makeSwordBtn = document.querySelector("#make-sword-btn");
 const resetForgeBtn = document.querySelector("#reset-forge-btn");
+
+// plan is: on Make sword click -> call existing makeSword() to check heat and craft
+makeSwordBtn.addEventListener("click", function () {
+  makeSword();
+});
+
+// plan is: on Reset forge click -> clear input field and call resetForge()
+resetForgeBtn.addEventListener("click", function () {
+  heatInput.value = "";
+  resetForge();
+});
+
+// initialize starting state on page load
+resetForge();
