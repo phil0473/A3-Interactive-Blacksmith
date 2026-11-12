@@ -166,5 +166,5 @@ resetForgeBtn.addEventListener("click", function () {
 // initialize starting state on page load
 resetForge();
 
-// 8. call resetForge() once to start the game
+// 8. call resetforge() once to start the game
 resetForge();
